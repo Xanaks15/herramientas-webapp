@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Nexa-Bold';
     src: url('/assets/fonts/NexaBold.eot');
@@ -37,6 +36,3 @@
     font-style: normal;
     font-display: swap;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Nexa; }
