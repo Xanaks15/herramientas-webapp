@@ -1,15 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login-screens',
+  selector: 'app-login-screen',
   templateUrl: './login-screens.component.html',
   styleUrls: ['./login-screens.component.scss']
 })
-export class LoginScreensComponent {
-  constructor(){}
+export class LoginScreenComponent implements OnInit {
+  //Aquí se definen las variables
+  public type: String = "password";
+  public username: String = "";
+  public password: String = "";
 
-  ngOnInit(): void{
-    
+  public errors:any = {};
+
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
   }
 
-}
+  //Aquí van las funciones de validación
+
+  public login(){
+    if(this.username == ""){
+      this.errors.username = "Campo requerido";
+    }
+    if(this.password == ""){
+      this.errors.password = "Campo requerido";
+    }
+  }
+
+  public showPassword(){
+    if(this.type == "password"){
+      this.type = "text";
+    }else{
+      this.type = "password";
+    }
+  }
+
+  public goRegistro(){
+    this.router.navigate(["registro"]);
+  }
+ 
+  public goNuevoLoginScreen(){
+    this.router.navigate(["nuevo-login"]);
+  }
+}//Fin clase
