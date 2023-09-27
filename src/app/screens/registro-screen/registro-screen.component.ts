@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { MatDatepicker } from '@angular/material/datepicker';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-registro-screen',
@@ -21,13 +22,14 @@ export class RegistroScreenComponent implements OnInit {
   public errors:any ={};
 
   constructor(
-    private location: Location
+    private location: Location,
+    private usuariosService: UsuariosService
   ) {
     // No debes asignar el valor de 'picker' aquí
   }
 
   ngOnInit(): void {
-    this.user = this.esquemaUser();
+    this.user = this.usuariosService.esquemaUser();
     console.log("User: ", this.user);
   }
 
@@ -73,21 +75,4 @@ export class RegistroScreenComponent implements OnInit {
     console.log("Fecha: ", this.user.fecha_nacimiento);
   }
 
-
-  public esquemaUser() {
-    return {
-      'matricula': '',
-      'first_name': '',
-      'last_name': '',
-      'email': '',
-      'password': '',
-      'confirmar_password': '',
-      'fecha_nacimiento': '',
-      'curp': '',
-      'rfc': '',
-      'edad': '',
-      'telefono': '',
-      'ocupacion': '',
-    };
-  }
 }
