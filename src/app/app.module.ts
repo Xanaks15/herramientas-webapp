@@ -17,6 +17,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule } from '@angular/material/core';
 //Cambia el idioma a español
 import {MAT_DATE_LOCALE} from '@angular/material/core';
+//Mask
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+//Options mask
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,9 @@ import {MAT_DATE_LOCALE} from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'es-ES'}],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

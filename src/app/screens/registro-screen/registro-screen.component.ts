@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+declare var $:any;
 
 @Component({
   selector: 'app-registro-screen',
@@ -36,8 +37,23 @@ export class RegistroScreenComponent implements OnInit {
   public regresar() {
     this.location.back();
   }
-  public registrar() {
-    
+  public registrar() { //No todas las rutas de acceso devuelven un valor
+    this.errors = [];
+
+    this.errors = this.usuariosService.validarUsuario(this.user);
+    if (!$.isEmptyObject(this.errors)) {
+      //Pasa la validación
+      return false;
+    }
+    //valida la contraseña
+    if(this.user.password == this.user.confirmar_password){
+      //Funcion para registrarse
+      alert("Todo chido vamos a registrar");
+    }else{
+      alert("Las contraseñas no coinciden");
+      this.user.password="";
+      this.user.confirmar_password="";
+    }
   }
 
   //Funciones para password
