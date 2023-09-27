@@ -29,25 +29,33 @@
                     <input matInput [(ngModel)]="user.email" placeholder="Escribe tu email">
                 </mat-form-field>
 
-                <mat-form-field class="mat-input" appearance="outline">
+                <mat-form-field class="mat-input" appearance="outline" *ngIf="!editar">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput [(ngModel)]="user.password" placeholder="Escribe tu contraseña">
+                    <input matInput [(ngModel)]="user.password" type="{{ inputType_1 }}" placeholder="Escribe contraseña">
+                    <mat-icon matSuffix class="eye-icon" (click)="showPassword()">{{hide_1 ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
-
-                <mat-form-field class="mat-input" appearance="outline">
-                    <mat-label>Confirmar Contraseña</mat-label>
-                    <input matInput [(ngModel)]="user.confirmar_password" placeholder="Confirma tu contraseña">
+                <div *ngIf="errors.password" class="invalid-feedback">{{ errors.password }}</div>
+    
+                <mat-form-field class="mat-input" appearance="outline" *ngIf="!editar">
+                    <mat-label>Confirmar contraseña</mat-label>
+                    <input matInput [(ngModel)]="user.confirmar_password" type="{{ inputType_2 }}" placeholder="Confirma la contraseña">
+                    <mat-icon matSuffix class="eye-icon" (click)="showPwdConfirmar()">{{hide_2 ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
+                <div *ngIf="errors.confirmar_password" class="invalid-feedback">{{ errors.confirmar_password }}</div>
 
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>CURP</mat-label>
                     <input matInput [(ngModel)]="user.curp" placeholder="Escribe tu CURP">
                 </mat-form-field>
 
+                <!-- Cambio de input de fecha -->
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>Fecha de nacimiento</mat-label>
-                    <input matInput [(ngModel)]="user.fecha_nacimiento" placeholder="Escribe tu fecha de nacimiento">
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="user.fecha_nacimiento" (focus)="picker.open()" placeholder="Agregar fecha" (dateChange)="changeFecha($event)" type="string">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
+                <!-- <div *ngIf="errors.fecha_nacimiento" class="invalid-feedback">{{ errors.fecha_nacimiento }}</div> -->
 
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>RFC</mat-label>
