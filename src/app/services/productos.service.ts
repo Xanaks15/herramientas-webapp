@@ -26,8 +26,8 @@ export class productosService  {
     console.log("Validando Producto... ", data);
     let error: any = [];
 
-    if(!this.validatorService.required(data["ID"])){
-      error["ID"] = this.errorService.required;
+    if(!this.validatorService.required(data["id"])){
+      error["id"] = this.errorService.required;
     }
 
     if(!this.validatorService.required(data["nombre_producto"])){
@@ -37,7 +37,7 @@ export class productosService  {
     }else if(!this.validatorService.max(data["nombre_producto"], 20)){
       error["nombre_producto"] = this.errorService.max(20);
     }
-    
+
     if(!this.validatorService.required(data["precio"])){
       error["precio"] = this.errorService.required;
     }else if(!this.validatorService.numeric(data["precio"])){

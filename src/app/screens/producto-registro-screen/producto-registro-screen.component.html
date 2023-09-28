@@ -8,7 +8,9 @@
             <mat-icon class="icon-forward">arrow_forward</mat-icon>
         </div>
         <div class="body-registro">
-
+            <div class="image-otaku">
+                <img src="/assets/images/rei.jpg" alt="rei">
+            </div>
             <mat-form-field class="mat-input" appearance="outline">
                 <mat-label>ID</mat-label>
                 <input matInput [(ngModel)]="producto.id" placeholder="Escribe la ID">
@@ -19,17 +21,17 @@
                 <mat-label>Nombre</mat-label>
                 <input matInput [(ngModel)]="producto.nombre" placeholder="Escribe nombre">
             </mat-form-field>
-            <div *ngIf="errors.nombre" class="invalid-feedback">{{ errors.nombre }}</div> 
+            <div *ngIf="errors.nombre" class="invalid-feedback">{{ errors.nombre_producto }}</div> 
 
             <mat-form-field class="mat-input" appearance="outline">
                 <mat-label>Departamento</mat-label>
-                <input matInput [(ngModel)]="producto.departamento" placeholder="Escribe descripción">
+                <input matInput [(ngModel)]="producto.departamento" placeholder="Escribe departamento">
             </mat-form-field>
             <div *ngIf="errors.descripcion" class="invalid-feedback">{{ errors.departamento }}</div> 
 
             <mat-form-field class="mat-input" appearance="outline">
                 <mat-label>Precio</mat-label>
-                <input matInput [(ngModel)]="producto.precio" mask='$000.00' placeholder="Escribe precio">
+                <input matInput [(ngModel)]="producto.precio" mask='000.00' placeholder="Escribe precio">
             </mat-form-field>
             <div *ngIf="errors.precio" class="invalid-feedback">{{ errors.precio }}</div> 
             

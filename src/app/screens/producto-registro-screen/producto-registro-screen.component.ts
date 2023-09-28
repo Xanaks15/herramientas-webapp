@@ -1,5 +1,4 @@
 import { productosService } from './../../services/productos.service';
-import { ValidatorService } from './../../services/tools/validator.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -20,7 +19,7 @@ constructor(
 ) { }
 
 ngOnInit (): void {
-  this.producto = this.ProductosService.esquemaProducto();
+  this.producto = this.ProductosService.esquemaProducto;
     console.log("Producto: ", this.producto);
 }
 

@@ -1,3 +1,15 @@
+
+.image-otaku img{
+    width: 50vh;
+    height: 50vh;
+    display: flex; /* Cambiar a display: flex; */
+    flex-direction: column;
+    justify-content:left;
+    align-items: right;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
 .wrapper{
     width: 100vw;
     height: 100vh;
@@ -6,7 +18,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    background-color: #FFFFFF;
+    background-color: #faf9f9;
 }
 
 .section-registro{
@@ -27,6 +39,7 @@
     align-items: center;
     background-color: #0092B8;
 }
+
 
 .title{
     font-size: 28px;
@@ -67,7 +80,84 @@
 
 mat-form-field{
     width: 100%!important;
-    height: 50px!important;
-    margin-bottom: auto;
+    height: 48px!important;
     text-align: left!important;
+}
+
+//Estilos mat-input
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    text-align: left;
+    font-family: Nexa!important;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #E84150 !important;
+    opacity: 1;
+}
+::ng-deep .mat-input-element{
+    text-align: left;
+    font-family: Nexa;
+    font-size: 16px;
+    letter-spacing: 0px;
+    opacity: 0.6;
+    color: #000000 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+//Cambiar focused de mat-input
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #000000!important;
+}
+
+.section-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+    
+}
+
+.btn-danger{
+    width: 208px;
+    height: 48px;
+    border-radius: 8px!important;
+    opacity: 1;
+    //Fuente
+    text-align: center;
+    font-family: Nexa-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.btn-primary{
+    width: 208px;
+    height: 48px;
+
+    background-color: #0092B8!important;
+    border-color: #0092B8!important;
+    border-radius: 8px!important;
+    opacity: 1;
+    //Fuente
+    text-align: center;
+    font-family: Nexa-Bold;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.btn-info:hover {
+    background-color: #017895!important;
+    border-color: #017895!important;
+    
 }
