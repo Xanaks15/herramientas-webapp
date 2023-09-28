@@ -5,29 +5,31 @@
             <mat-icon class="icon-back" (click)="regresar()">arrow_back</mat-icon>
             <span *ngIf="!editar" class="title">Registrar producto</span>
             <span *ngIf="editar" class="title">Actualizar producto</span>
-            <mat-icon class="icon-forward">arrow_forward</mat-icon>
+            <mat-icon class="home" (click)="home()">home</mat-icon>
         </div>
         <div class="body-registro">
             <div class="image-otaku">
                 <img src="/assets/images/rei.jpg" alt="rei">
             </div>
+            
             <mat-form-field class="mat-input" appearance="outline">
                 <mat-label>ID</mat-label>
-                <input matInput [(ngModel)]="producto.id" placeholder="Escribe la ID">
+                <input matInput [(ngModel)]="producto.id" name="id" placeholder="Escribe ID o matrícula">
             </mat-form-field>
-            <div *ngIf="errors.nombre" class="invalid-feedback">{{ errors.id }}</div> 
+            <div *ngIf="errors.id" class="invalid-feedback">{{ errors.id }}</div>
+
 
             <mat-form-field class="mat-input" appearance="outline">
                 <mat-label>Nombre</mat-label>
-                <input matInput [(ngModel)]="producto.nombre" placeholder="Escribe nombre">
+                <input matInput [(ngModel)]="producto.nombre_producto" placeholder="Escribe nombre">
             </mat-form-field>
-            <div *ngIf="errors.nombre" class="invalid-feedback">{{ errors.nombre_producto }}</div> 
+            <div *ngIf="errors.nombre_producto" class="invalid-feedback">{{ errors.nombre_producto }}</div> 
 
             <mat-form-field class="mat-input" appearance="outline">
                 <mat-label>Departamento</mat-label>
                 <input matInput [(ngModel)]="producto.departamento" placeholder="Escribe departamento">
             </mat-form-field>
-            <div *ngIf="errors.descripcion" class="invalid-feedback">{{ errors.departamento }}</div> 
+            <div *ngIf="errors.departamento" class="invalid-feedback">{{ errors.departamento }}</div> 
 
             <mat-form-field class="mat-input" appearance="outline">
                 <mat-label>Precio</mat-label>
