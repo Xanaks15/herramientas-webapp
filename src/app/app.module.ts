@@ -18,9 +18,10 @@ import {MatNativeDateModule } from '@angular/material/core';
 //Cambia el idioma a español
 import {MAT_DATE_LOCALE} from '@angular/material/core';
 //Mask
-import { NgxMaskModule, IConfig } from 'ngx-mask';
+//import { NgxMaskModule} from 'ngx-mask/lib/ngx-mask.module';
+//import { NgxMaskModule, IConfig } from 'ngx-mask';
 //Options mask
-export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
+//export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +39,13 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    //NgxMaskModule.forRoot(options),
+  
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},
+    // {provide: NgxMaskModule},
+    
   ],
   bootstrap: [AppComponent]
 })
