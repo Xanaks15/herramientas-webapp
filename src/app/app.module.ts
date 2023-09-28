@@ -9,8 +9,6 @@ import { LoginScreenComponent } from './screens/login-screens/login-screens.comp
 import { RegistroScreenComponent } from './screens/registro-screen/registro-screen.component';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegistroProductoScreenComponent } from './screens/registro-producto-screen/registro-producto-screen.component';
-
 //Angular material
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -22,15 +20,19 @@ import {MAT_DATE_LOCALE} from '@angular/material/core';
 //Mask
 //import { NgxMaskModule} from 'ngx-mask/lib/ngx-mask.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ProductoRegistroScreenComponent } from './screens/producto-registro-screen/producto-registro-screen.component';
+
+
 //Options mask
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
     RegistroScreenComponent,
     HomeScreenComponent,
-    RegistroProductoScreenComponent,
+    ProductoRegistroScreenComponent,
   ],
   imports: [
     BrowserModule,

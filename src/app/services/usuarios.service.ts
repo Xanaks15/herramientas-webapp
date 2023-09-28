@@ -29,6 +29,15 @@ export class UsuariosService {
     };
   }
 
+  public esquemaProducto() {
+    return{
+      'id': '',
+      'nombre_producto': '',
+      'precio': '',
+      'departamento': '',
+    }
+  }
+
   //Función para validar datos del usuario
   public validarUsuario(data: any) {
     console.log("Validando Usuario... ", data);
